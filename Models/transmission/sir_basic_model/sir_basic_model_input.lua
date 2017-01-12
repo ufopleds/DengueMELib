@@ -30,6 +30,9 @@ outChartSelect = {"Sh", "Ih", "Rh", "Nh"}
 outChartLabel = {"Susceptible", "Infected", "Recovered", "Humam Population"}
 outChartStyle = {"lines", "lines", "lines", "dots"}
 outChartColor = {"blue", "red", "yellow", "black"}
+outChartTitle = ""
+outChartXLabel = "Time"
+outChartYLabel = ""
 
 outTextScreen = true
 outTextScreenSelect = {"Sh", "Ih", "Rh"}
