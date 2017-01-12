@@ -17,7 +17,7 @@ world = Model {
       
       -- Output: Chart
       if (outChart) then
-         model.chart = Chart { target = model, select = outChartSelect, label= outChartLabel, style = outChartStyle, color = outChartColor }
+         model.chart = Chart { target = model, select = outChartSelect, label= outChartLabel, style = outChartStyle, color = outChartColor, title = outChartTitle, xLabel = outChartXLabel, yLabel = outChartYLabel }
       end
       
       -- Output: TextScreen
