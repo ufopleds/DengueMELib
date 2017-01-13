@@ -58,7 +58,7 @@
       <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="true" />
     </outVisualTable>
     <outLog id="outLog" label="outLog" output="true">
-      <config separator=";" filepath="" filename="results" filetype="csv" overwrite="true" />
+      <config separator=";" filepath="" filename="results" overwrite="true" />
       <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="true" />
       <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="true" />
       <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="true" />
