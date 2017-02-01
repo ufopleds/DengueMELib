@@ -1,13 +1,8 @@
 <xmlmodel>
-  <script interpreter="TerraME">
-    <file>sir_basic_model.lua</file>
-    <main>sir_basic_model.lua</main>
-    <modelcategory>transmission</modelcategory>
-    <modeltype>sir_basic_model</modeltype>
-  </script>
   <model>
     <id>sir_basic_model</id>
     <userid>sir_basic_model</userid>
+    <name>SIR Basic Model</name>
     <category>transmission</category>
     <type>compartmental</type>
     <title>A Susceptible-Infected-Recovered basic (SIR) model.</title>
@@ -16,14 +11,15 @@
       <author>Lucas Ferreira</author>
     </authors>
     <description>For a description of such model visit http://en.wikipedia.org/wiki/Epidemic_model</description>
+    <sourcecode lang="TerraML" interpreter="TerraME" version="2.0.0-beta-4">
+      <version>1.0</version>
+      <files>
+        <file>sir_basic_model.lua</file>
+      </files>
+      <main>sir_basic_model.lua</main>
+      <dependencies></dependencies>
+    </sourcecode>
   </model>
-  <modelscript lang="TerraML" interpreter="TerraME" version="2.0.0-beta-4">
-    <files>
-      <file>sir_basic_model.lua</file>
-    </files>
-    <main>sir_basic_model.lua</main>
-    <dependencies></dependencies>
-  </modelscript>
   <parameters>
     <groupbox label="Population">
       <field id="Sh" label="Susceptible" type="spinbox" minimum="0" maximum="1e+06" description="number of susceptible humans [1-999999999]">9999</field>
