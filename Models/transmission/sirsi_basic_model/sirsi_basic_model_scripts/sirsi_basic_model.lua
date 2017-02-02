@@ -1,8 +1,11 @@
+-- DengueME Models Library
+-- @id sirsi_basic_model
+-- @name SIR-SI Basic Model
+-- @version 1.0
+-- @interpreter TerraME 2.0-beta4
 -- @example A Susceptible-Infected-Recovered-Susceptible-Infected (SIR-SI) basic model.
--- @version TerraME 2.0-beta4
 -- @authors Tiago Lima, Lucas Saraiva
--- @description SIR-SI model is a simplified version of the model proposed by Nishiura (2006). 
--- @description For a complete description of such model see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.
+-- @description SIR-SI model is a simplified version of the model proposed by Nishiura (2006). For a complete description of such model see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.
 
 world = Model {
    Sh = Sh,
