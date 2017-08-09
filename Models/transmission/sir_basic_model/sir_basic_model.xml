@@ -5,13 +5,13 @@
     <name>SIR Basic Model</name>
     <category>transmission</category>
     <type>compartmental</type>
-    <title>A Susceptible-Infected-Recovered basic (SIR) model.</title>
+    <title>A Susceptible-Infected-Recovered (SIR) basic model.</title>
     <authors>
       <author>Tiago Lima</author>
       <author>Lucas Ferreira</author>
     </authors>
-    <description>For a description of such model visit http://en.wikipedia.org/wiki/Epidemic_model</description>
-    <sourcecode lang="TerraML" interpreter="TerraME" version="2.0.0-beta-4">
+    <description>For a description of such model, please visit http://en.wikipedia.org/wiki/Epidemic_model</description>
+    <sourcecode lang="TerraML" interpreter="TerraME" version="2.0-RC-4">
       <version>1.0</version>
       <files>
         <file>sir_basic_model.lua</file>
