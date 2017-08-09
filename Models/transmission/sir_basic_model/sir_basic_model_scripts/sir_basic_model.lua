@@ -2,10 +2,10 @@
 -- @id sir_basic_model
 -- @name SIR Basic Model
 -- @version 1.0
--- @interpreter TerraME 2.0-beta4
--- @example A Susceptible-Infected-Recovered basic (SIR) model. 
+-- @interpreter TerraME 2.0-RC-4
+-- @example A Susceptible-Infected-Recovered (SIR) basic model. 
 -- @authors Tiago Lima, Lucas Saraiva
--- @description For a description of such model visit <<http://en.wikipedia.org/wiki/Epidemic_model>>
+-- @description For a description of such model, please visit <<http://en.wikipedia.org/wiki/Epidemic_model>>
 
 world = Model {
    Sh = Sh,
