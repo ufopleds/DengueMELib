@@ -1,5 +1,5 @@
 -- DengueME Models Library
--- @id sir_basic_model
+-- @id tme_sir_basic_model
 -- @name SIR Basic Model
 -- @version 1.0
 -- @interpreter TerraME 2.0-RC-4
@@ -12,8 +12,8 @@ print('LOADING INPUT FILE AND RUNNING MODEL')
 io.flush();
 
 -- PATH CONFIG
-BASE_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/sir_basic_model"
-SCRIPT_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/sir_basic_model/sir_basic_model_scripts"
+BASE_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/tme_sir_basic_model"
+SCRIPT_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/tme_sir_basic_model/tme_sir_basic_model_scripts"
 RESULTS_PATH = BASE_PATH
 
 -- PARAMETERS
@@ -52,4 +52,4 @@ outLogOverwrite = true
 output = outChart or outTextScreen or outVisualTable or outLog
 
 -- LOADING MODEL
-dofile(SCRIPT_PATH .. "/sir_basic_model.lua")
+dofile(SCRIPT_PATH .. "/tme_sir_basic_model.lua")
