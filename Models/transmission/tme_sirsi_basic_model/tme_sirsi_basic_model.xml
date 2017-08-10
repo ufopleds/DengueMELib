@@ -1,7 +1,7 @@
 <xmlmodel>
   <model>
-    <id>sirsi_basic_model</id>
-    <userid>sirsi_basic_model</userid>
+    <id>tme_sirsi_basic_model</id>
+    <userid>tme_sirsi_basic_model</userid>
     <name>SIR-SI Basic Model</name>
     <category>transmission</category>
     <type>compartmental</type>
@@ -10,7 +10,7 @@
       <author>Tiago Lima</author>
       <author>Lucas Ferreira</author>
     </authors>
-    <description>SIR-SI model is a simplified version of the model proposed by Nishiura (2006). For a complete description of such model see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.</description>
+    <description>SIR-SI basic model is a simplified version of the model proposed by Nishiura (2006). For a complete description of such model please see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.</description>
     <sourcecode lang="TerraML" interpreter="TerraME" version="2.0-RC-4">
       <version>1.0</version>
       <files>

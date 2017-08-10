@@ -1,19 +1,19 @@
 -- DengueME Models Library
--- @id sirsi_basic_model
+-- @id tme_sirsi_basic_model
 -- @name SIR-SI Basic Model
 -- @version 1.0
 -- @interpreter TerraME 2.0-RC-4
 -- @example A Susceptible-Infected-Recovered-Susceptible-Infected (SIR-SI) basic model.
 -- @authors Tiago Lima, Lucas Saraiva
--- @description SIR-SI model is a simplified version of the model proposed by Nishiura (2006). For a complete description of such model see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.
+-- @description SIR-SI basic model is a simplified version of the model proposed by Nishiura (2006). For a complete description of such model please see the paper Nishiura (2006), "Mathematical and Statistical Analyses of the Spread of Dengue", Dengue Bulletin, Volume 30, 2006.
 
 -- INPUT FILE
 print('LOADING INPUT FILE AND RUNNING MODEL')
 io.flush();
 
 -- PATH CONFIG
-BASE_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/sirsi_basic_model"
-SCRIPT_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/sirsi_basic_model/sirsi_basic_model_scripts"
+BASE_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/tme_sirsi_basic_model"
+SCRIPT_PATH = "D:/github/workingpath/DengueMELib/Models/transmission/tme_sirsi_basic_model/tme_sirsi_basic_model_scripts"
 RESULTS_PATH = BASE_PATH
 
 -- PARAMETERS
@@ -76,4 +76,4 @@ outLogOverwrite = true
 output = outChart or outChartHuman or outChartVector or outTextScreen or outVisualTable or outLog
 
 -- LOADING MODEL
-dofile(SCRIPT_PATH .. "/sirsi_basic_model.lua")
+dofile(SCRIPT_PATH .. "/tme_sirsi_basic_model.lua")

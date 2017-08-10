@@ -1,7 +1,7 @@
 <xmlmodel>
   <model>
-    <id>sir_basic_model</id>
-    <userid>sir_basic_model</userid>
+    <id>tme_sir_basic_model</id>
+    <userid>tme_sir_basic_model</userid>
     <name>SIR Basic Model</name>
     <category>transmission</category>
     <type>compartmental</type>
@@ -14,9 +14,9 @@
     <sourcecode lang="TerraML" interpreter="TerraME" version="2.0-RC-4">
       <version>1.0</version>
       <files>
-        <file>sir_basic_model.lua</file>
+        <file>tme_sir_basic_model.lua</file>
       </files>
-      <main>sir_basic_model.lua</main>
+      <main>tme_sir_basic_model.lua</main>
       <dependencies></dependencies>
     </sourcecode>
   </model>
