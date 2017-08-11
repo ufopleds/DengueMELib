@@ -64,14 +64,14 @@
       <variable id="pupae" select="pupae" label="Pupae" type="plotVariable" output="true" />
       <variable id="adults" select="adults" label="Adults" type="plotVariable" output="true" />
       <variable id="population" select="population" label="Vector Population" type="plotVariable" output="true" />
-    </outChart>
+    </outTextScreen>
     <outVisualTable id="outVisualTable" label="Table" output="true">
       <variable id="eggs" select="eggs" label="Eggs" type="plotVariable" output="true" />
       <variable id="larvae" select="larvae" label="Larvae" type="plotVariable" output="true" />
       <variable id="pupae" select="pupae" label="Pupae" type="plotVariable" output="true" />
       <variable id="adults" select="adults" label="Adults" type="plotVariable" output="true" />
       <variable id="population" select="population" label="Vector Population" type="plotVariable" output="true" />
-    </outChart>
+    </outVisualTable>
     <outLog id="outLog" label="File" output="true">
       <config separator=";" filepath="" filename="results" overwrite="true" />
       <variable id="eggs" select="eggs" label="Eggs" type="plotVariable" output="true" />
