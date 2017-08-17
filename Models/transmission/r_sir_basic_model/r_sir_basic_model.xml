@@ -1,27 +1,27 @@
 <xmlmodel>
-  
   <model>
     <id>r_sir_basic_model</id>
     <userid>r_sir_basic_model</userid>
     <name>SIR Basic Model</name>
     <category>transmission</category>
     <type>compartmental</type>
-    <title>A Susceptible-Infected-Recovered (SIR) basic model.</title>
+    <title>A Susceptible-Infected-Recovered (SIR) basic model</title>
     <authors>
+      <author>Fellipe Prado</author>
       <author>Tiago Lima</author>
-      <author>Lucas Ferreira</author>
     </authors>
     <description>For a description of such model, please visit http://en.wikipedia.org/wiki/Epidemic_model</description>
     <sourcecode lang="R" interpreter="R" version="3.4.1">
       <version>1.0</version>
       <files>
-        <file>r_sir_basic_model.R</file>
+        <file>r_sir_basic_model.r</file>
       </files>
-      <main>r_sir_basic_model.R</main>
-      <dependencies></dependencies>
+      <main>r_sir_basic_model.r</main>
+      <dependencies>
+         <package version="1.20">deSolve</package>
+      </dependencies>
     </sourcecode>
   </model>
-  
   <parameters>
     <groupbox label="Population">
       <field id="Sh" label="Susceptible" type="spinbox" minimum="0" maximum="1e+06" description="number of susceptible humans [1-999999999]">9999</field>
@@ -34,36 +34,33 @@
       <field id="gamma" label="Recovery rate" type="doublespinbox" minimum="0" maximum="1e+06" precision="2" step="0.1" description="recovery rate [0-1]">0.25</field>
     </groupbox>
   </parameters>
-  
   <simulation label="Simulation">
     <field id="steps" label="Steps" type="spinbox" minimum="0" maximum="1e+06" description="simulation steps [0-999999999]">120</field>
   </simulation>
-  
   <results>
-    <outChart id="outChart" label="Chart" output="TRUE">
-      <config title="" xLabel="Time" yLabel="" />
-      <variable id="Sh" select="Sh" label="Susceptible" chartlabel="Susceptible" type="plotVariable" style="lines" color="blue" output="TRUE" />
-      <variable id="Ih" select="Ih" label="Infected" chartlabel="Infected" type="plotVariable" style="lines" color="red" output="TRUE" />
-      <variable id="Rh" select="Rh" label="Recovered" chartlabel="Recovered" type="plotVariable" style="lines" color="yellow" output="TRUE" />
-      <variable id="Nh" select="Nh" label="Population" chartlabel="Human Population" type="plotVariable" style="dots" color="black" output="TRUE" />
+    <outChart id="outChart" label="Chart" output="true">
+      <config title="" xLabel="Time" yLabel="Humans" />
+      <variable id="Sh" select="Sh" label="Susceptible" chartlabel="Susceptible" type="plotVariable" style="lines" color="blue" output="true" />
+      <variable id="Ih" select="Ih" label="Infected" chartlabel="Infected" type="plotVariable" style="lines" color="red" output="true" />
+      <variable id="Rh" select="Rh" label="Recovered" chartlabel="Recovered" type="plotVariable" style="lines" color="yellow" output="true" />
+      <variable id="Nh" select="Nh" label="Population" chartlabel="Humam Population" type="plotVariable" style="dots" color="black" output="true" />
     </outChart>
-    <outTextScreen id="outTextScreen" label="TextScreen" output="TRUE">
-      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="TRUE" />
-      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="TRUE" />
-      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="TRUE" />
+    <outTextScreen id="outTextScreen" label="TextScreen" output="true">
+      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="true" />
+      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="true" />
+      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="true" />
     </outTextScreen>
-    <outVisualTable id="outVisualTable" label="Table" output="TRUE">
-      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="TRUE" />
-      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="TRUE" />
-      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="TRUE" />
+    <outVisualTable id="outVisualTable" label="Table" output="true">
+      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="true" />
+      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="true" />
+      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="true" />
     </outVisualTable>
-    <outLog id="outLog" label="File" output="TRUE">
-      <config separator=";" filepath="" filename="results" overwrite="TRUE" />
-      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="TRUE" />
-      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="TRUE" />
-      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="TRUE" />
-      <variable id="Nh" select="Nh" label="Population" type="plotVariable" output="TRUE" />
+    <outLog id="outLog" label="File" output="true">
+      <config separator=";" filepath="" filename="results" overwrite="true" />
+      <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="true" />
+      <variable id="Ih" select="Ih" label="Infected" type="plotVariable" output="true" />
+      <variable id="Rh" select="Rh" label="Recovered" type="plotVariable" output="true" />
+      <variable id="Nh" select="Nh" label="Population" type="plotVariable" output="true" />
     </outLog>
   </results>
-  
 </xmlmodel>
