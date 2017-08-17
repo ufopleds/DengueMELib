@@ -31,7 +31,6 @@ init       <- c(Sh = Sh, Ih = Ih, Rh = Rh)
 parameters <- c(beta = beta, gamma = gamma)
 ## Time frame
 times = times
-
 ## Solve using ode (General Solver for Ordinary Differential Equations)
 out <- ode(y = init, times = times, func = sir, parms = parameters)
 ## change results to data frame
@@ -43,26 +42,26 @@ out$time <- NULL
 # RESULTS
 ## Check to see if there's a desired output
 if(output){
-  ## Chart
+  ### Chart
   if(outChart){
     
     outChartData = out
     
     if(any(outChartSelect == "Nh")){
-      outChartData <- cbind(out, rowSums(out))
+      outChartData <- cbind(outChartData, rowSums(outChartData))
       colnames(outChartData)[4] <- "Nh"
     }
     
     if(all(outChartSelect != "Sh")){
-      outChartData = out$Sh <- NULL
+      outChartData = outChartData$Sh <- NULL
     }
     
     if(all(outChartSelect != "Ih")){
-      outChartData = out$Ih <- NULL
+      outChartData = outChartData$Ih <- NULL
     }
     
     if(all(outChartSelect != "Rh")){
-      outChartData = out$Rh <- NULL
+      outChartData = outChartData$Rh <- NULL
     }
     
     png(filename = outChartFile, width = 1000, height = 875, res = 113)
@@ -74,65 +73,66 @@ if(output){
     dev.off()
   }
   
-  ## Text Screen
+  ### Text Screen
   if(outTextScreen){
     
     outTextScreenData = out
     
     if(all(outTextScreenSelect != "Sh")){
-      outTextScreenData = out$Sh <- NULL
+      outTextScreenData = outTextScreenData$Sh <- NULL
     }
     
     if(all(outTextScreenSelect != "Ih")){
-      outTextScreenData = out$Ih <- NULL
+      outTextScreenData = outTextScreenData$Ih <- NULL
     }
     
     if(all(outTextScreenSelect != "Rh")){
-      outTextScreenData = out$Rh <- NULL
+      outTextScreenData = outTextScreenData$Rh <- NULL
     }
     
     print(outTextScreenData)
   }
   
-  ## Visual Table
+  ### Visual Table
   if(outVisualTable){
+    
     outVisualTableData = out
     
     if(all(outVisualTableSelect != "Sh")){
-      outVisualTableData = out$Sh <- NULL
+      outVisualTableData = outVisualTableData$Sh <- NULL
     }
     
     if(all(outVisualTableSelect != "Ih")){
-      outVisualTableData = out$Ih <- NULL
+      outVisualTableData = outVisualTableData$Ih <- NULL
     }
     
     if(all(outVisualTableSelect != "Rh")){
-      outVisualTableData = out$Rh <- NULL
+      outVisualTableData = outVisualTableData$Rh <- NULL
     }
     
     print(outVisualTableData)
   }
   
-  ## Log
+  ### Log
   if(outLog){
+    
     outLogData = out
     
     if(any(outLogSelect == "Nh")){
-      outNh <- matrix(Nh, nrow = dim(out)[1], ncol = 1)
-      colnames(outNh) <- "Nh"
-      outLogData <- cbind(out, outNh)
+      outLogData <- cbind(outLogData, rowSums(outLogData))
+      colnames(outLogData)[4] <- "Nh"
     }
     
     if(all(outLogSelect != "Sh")){
-      outLogData = out$Sh <- NULL
+      outLogData = outLogData$Sh <- NULL
     }
     
     if(all(outLogSelect != "Ih")){
-      outLogData = out$Ih <- NULL
+      outLogData = outLogData$Ih <- NULL
     }
     
     if(all(outLogSelect != "Rh")){
-      outLogData = out$Rh <- NULL
+      outLogData = outLogData$Rh <- NULL
     }
     
     write.table(outLogData, file = outLogFile, row.names = FALSE, sep = outLogSeparator)
