@@ -12,13 +12,11 @@ print('LOADING INPUT FILE AND RUNNING MODEL')
 
 # DEPENDENCIES
 MODEL_RVERSION <- "3.4.1"
-DEPENDENCIES <- data.frame(lib = c("deSolve", "stats", "grid"), version = c("1.20", "3.4.1", "2.0"), stringsAsFactors = F)
+DEPENDENCIES <- data.frame(lib = c("deSolve"), version = c("1.20"), stringsAsFactors = F)
 
 # PATH CONFIG
-BASE_PATH <- "C:\\Users\\Fellipe\\Documents\\R\\DengueME\\r_sirsi_basic_model\\"
-SCRIPT_PATH <- "C:\\Users\\Fellipe\\Documents\\R\\DengueME\\r_sirsi_basic_model\\r_sirsi_basic_model_scripts"
-#BASE_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model"
-#SCRIPT_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model/r_sirsi_basic_model_scripts"
+BASE_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model"
+SCRIPT_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model/r_sirsi_basic_model_scripts"
 RESULTS_PATH <- BASE_PATH
 
 # checking dependencies
@@ -87,5 +85,4 @@ outLogOverwrite <- TRUE
 output <- outChart | outChartHuman | outChartVector | outTextScreen | outVisualTable | outLog
 
 # LOADING MODEL
-#source(paste0(SCRIPT_PATH, "/r_sirsi_basic_model.r"))
 source(paste0(SCRIPT_PATH, "\\r_sirsi_basic_model.r"))
