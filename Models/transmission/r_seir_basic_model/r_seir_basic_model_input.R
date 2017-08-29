@@ -12,6 +12,7 @@ print('LOADING INPUT FILE AND RUNNING MODEL')
 
 # DEPENDENCIES
 MODEL_RVERSION <- "3.4.1"
+DEPENDENCIES <- data.frame(lib = c("deSolve"), version = c("1.20"), stringsAsFactors = F)
 
 # PATH CONFIG
 BASE_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_seir_basic_model"

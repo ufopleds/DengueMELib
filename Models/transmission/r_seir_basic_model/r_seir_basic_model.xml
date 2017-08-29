@@ -31,8 +31,9 @@
       <field id="Nh" label="Population" type="spinbox" minimum="0" maximum="1e+06" description="total population [1-999999999]">10000</field>
     </groupbox>
     <groupbox label="Rates">
-      <field id="gamma" label="Recovery rate" type="doublespinbox" minimum="0" maximum="1e+06" precision="2" step="0.1" description="recovery rate [0-1]">0.14</field>
+      <field id="beta" label="Transmission rate" type="doublespinbox" minimum="0" maximum="1e+06" precision="2" step="0.1" description="transmission rate [0-100]">1.06</field>
       <field id="sigma" label="Exposed to Infectious rate" type="doublespinbox" minimum="0" maximum="1e+06" precision="2" step="0.1" description="exposed to infectious rate [0-1]">0.07</field>
+      <field id="gamma" label="Recovery rate" type="doublespinbox" minimum="0" maximum="1e+06" precision="2" step="0.1" description="recovery rate [0-1]">0.14</field>
     </groupbox>
   </parameters>
   <simulation label="Simulation">
