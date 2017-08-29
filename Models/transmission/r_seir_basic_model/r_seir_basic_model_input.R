@@ -23,7 +23,7 @@ RESULTS_PATH <- BASE_PATH
 USER_RVERSION <- package_version(R.version)
 USER_PACKINFO <- installed.packages(fields = c("Package", "Version"))
 source(paste0(BASE_PATH, "/../../dmelib.r"))
-dmelib_check_dependencies(MODEL_RVERSION)
+dmelib_check_dependencies(modelRVersion = MODEL_RVERSION, modelDependences = DEPENDENCIES, userRVersion = USER_RVERSION, userLibs = USER_PACKINFO)
 
 # PARAMETERS
 Sh <- 9999 # number of susceptible humans [1-999999999]
