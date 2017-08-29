@@ -14,9 +14,9 @@
     <sourcecode lang="R" interpreter="R" version="3.4.1">
       <version>1.0</version>
       <files>
-        <file>r_sirsi_basic_model.lua</file>
+        <file>r_sirsi_basic_model.r</file>
       </files>
-      <main>r_sirsi_basic_model.lua</main>
+      <main>r_sirsi_basic_model.r</main>
       <dependencies>
          <package version="1.20">deSolve</package>
       </dependencies>

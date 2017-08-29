@@ -14,9 +14,9 @@
     <sourcecode lang="TerraML" interpreter="TerraME" version="2.0-RC-4">
       <version>1.0</version>
       <files>
-        <file>sirsi_basic_model.lua</file>
+        <file>tme_sirsi_basic_model.lua</file>
       </files>
-      <main>sirsi_basic_model.lua</main>
+      <main>tme_sirsi_basic_model.lua</main>
       <dependencies></dependencies>
     </sourcecode>
   </model>
