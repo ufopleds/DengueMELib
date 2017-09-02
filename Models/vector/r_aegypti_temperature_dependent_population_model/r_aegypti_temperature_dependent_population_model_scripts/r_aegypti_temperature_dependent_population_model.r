@@ -65,12 +65,11 @@ simulation <- as.data.frame(lsoda(y = init, times = times, func = odeAedesEcolog
 
 # Results
 if (output) {
-   if (outChart) {
-      plot(x = simulation$time, y = simulation$eggs, type = outChartStyle[1], col=outChartColor[1], xlab="Time", ylab = "Aedes", ylim = c(0,600))
-      lines(x = simulation$time, y = simulation$larvae, type = outChartStyle[2], col=outChartColor[2])
-      lines(x = simulation$time, y = simulation$pupae, type = outChartStyle[3], col=outChartColor[3])
-      lines(x = simulation$time, y = simulation$adults, type = outChartStyle[4], col=outChartColor[4])
-      lines(x = simulation$time, y = simulation$population, type = outChartStyle[5], col=outChartColor[5], pch=20)
+   if (outChart & length(outChartSelect) > 0) {
+      plot(x = simulation$time, y = simulation[,c(outChartSelect[1])], type = outChartStyle[1], col=outChartColor[1], xlab="Time", ylab = "Aedes aegypti", ylim = c(0,600))
+      if (length(outChartSelect) >= 2)
+         for (i in 2:length(outChartSelect))
+            lines(x = simulation$time, simulation[,c(outChartSelect[i])], type = outChartStyle[i], col=outChartColor[i])
    }
    if (outTextScreen) {
       lastRow <- simulation[nrow(simulation),]

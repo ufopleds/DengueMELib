@@ -48,7 +48,7 @@ outChart <- TRUE
 outChartSelect <- c("eggs", "larvae", "pupae", "adults", "population")
 outChartLabel <- c("Eggs", "Larvae", "Pupae", "Adults", "Vector Population")
 outChartStyle <- c("l", "l", "l", "l", "l")
-outChartColor <- c("blue", "red", "yellow", "black", "gray")
+outChartColor <- c("red", "green", "blue", "black", "gray")
 outChartTitle <- ""
 outChartXLabel <- "Time"
 outChartYLabel <- ""
