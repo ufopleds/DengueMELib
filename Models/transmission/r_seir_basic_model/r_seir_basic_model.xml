@@ -45,8 +45,7 @@
       <variable id="Sh" select="Sh" label="Susceptible" chartlabel="Susceptible" type="plotVariable" style="lines" color="blue" output="true" />
       <variable id="Eh" select="Eh" label="Exposed" chartlabel="Exposed" type="plotVariable" style="lines" color="orange" output="true" />
       <variable id="Ih" select="Ih" label="Infectious" chartlabel="Infectious" type="plotVariable" style="lines" color="red" output="true" />
-      <variable id="Rh" select="Rh" label="Recovered" chartlabel="Recovered" type="plotVariable" style="lines" color="yellow" output="true" />
-      <variable id="Nh" select="Nh" label="Population" chartlabel="Human Population" type="plotVariable" style="dots" color="black" output="true" />
+      <variable id="Rh" select="Rh" label="Recovered" chartlabel="Recovered" type="plotVariable" style="lines" color="green" output="true" />
     </outChart>
     <outTextScreen id="outTextScreen" label="TextScreen" output="true">
       <variable id="Sh" select="Sh" label="Susceptible" type="plotVariable" output="true" />

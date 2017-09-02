@@ -37,12 +37,11 @@ tail(simulation)
 
 # Results
 if (output) {
-   if (outChart) {
-      plot(x = simulation$time, y = simulation$Sh, type = outChartStyle[1], col=outChartColor[1], xlab="Time", ylab = "Humans")
-      lines(x = simulation$time, y = simulation$Eh, type = outChartStyle[2], col=outChartColor[2])
-      lines(x = simulation$time, y = simulation$Ih, type = outChartStyle[3], col=outChartColor[3])
-      lines(x = simulation$time, y = simulation$Rh, type = outChartStyle[4], col=outChartColor[4])
-      lines(x = simulation$time, y = simulation$Nh, type = outChartStyle[5], col=outChartColor[5], pch=20)
+   if (outChart & length(outChartSelect) > 0) {
+      plot(x = simulation$time, y = simulation[,c(outChartSelect[1])], type = outChartStyle[1], col=outChartColor[1], xlab="Time", ylab = "Humans")
+      if (length(outChartSelect) >= 2)
+         for (i in 2:length(outChartSelect))
+            lines(x = simulation$time, simulation[,c(outChartSelect[i])], type = outChartStyle[i], col=outChartColor[i])
    }
    if (outTextScreen) {
       lastRow <- simulation[nrow(simulation),]

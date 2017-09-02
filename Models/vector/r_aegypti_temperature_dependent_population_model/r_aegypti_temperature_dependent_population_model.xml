@@ -48,9 +48,9 @@
   <results>
     <outChart id="outChart" label="Chart (vector population)" output="true">
       <config title="" xLabel="Time" yLabel="" />
-      <variable id="eggs" select="eggs" label="Eggs" chartlabel="Eggs" type="plotVariable" style="lines" color="blue" output="true" />
-      <variable id="larvae" select="larvae" label="Larvae" chartlabel="Larvae" type="plotVariable" style="lines" color="red" output="true" />
-      <variable id="pupae" select="pupae" label="Pupae" chartlabel="Pupae" type="plotVariable" style="lines" color="yellow" output="true" />
+      <variable id="eggs" select="eggs" label="Eggs" chartlabel="Eggs" type="plotVariable" style="lines" color="red" output="true" />
+      <variable id="larvae" select="larvae" label="Larvae" chartlabel="Larvae" type="plotVariable" style="lines" color="green" output="true" />
+      <variable id="pupae" select="pupae" label="Pupae" chartlabel="Pupae" type="plotVariable" style="lines" color="blue" output="true" />
       <variable id="adults" select="adults" label="Adults" chartlabel="Adults" type="plotVariable" style="lines" color="black" output="true" />
       <variable id="population" select="population" label="Vector Population" chartlabel="Vector Population" type="plotVariable" style="lines" color="gray" output="true" />
     </outChart>

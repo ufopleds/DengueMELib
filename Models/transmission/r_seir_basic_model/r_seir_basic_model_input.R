@@ -41,10 +41,10 @@ steps <- 120 # simulation steps [0-999999999]
 
 # RESULTS
 outChart <- TRUE
-outChartSelect <- c("Sh", "Eh", "Ih", "Rh", "Nh")
-outChartLabel <- c("Susceptible", "Exposed", "Infectious", "Recovered", "Humam Population")
-outChartStyle <- c("l", "l", "l", "l", "o")
-outChartColor <- c("blue", "orange", "red", "yellow", "black")
+outChartSelect <- c("Sh", "Eh", "Ih", "Rh")
+outChartLabel <- c("Susceptible", "Exposed", "Infectious", "Recovered")
+outChartStyle <- c("l", "l", "l", "l")
+outChartColor <- c("blue", "orange", "red", "green")
 outChartTitle <- ""
 outChartXLabel <- "Time"
 outChartYLabel <- "Humans"

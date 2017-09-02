@@ -44,29 +44,20 @@ betav <- 0.4 # transmission probability from the human to vector [0-1]
 steps <- 120 # simulation steps [0-999999999]
 
 # RESULTS
-outChart <- TRUE
-outChartSelect <- c("Sh", "Ih", "Rh", "Sv", "Iv")
-outChartLabel <- c("Susceptible (human)", "Infectious (human)", "Recovered (human)", "Susceptible (vector)", "Infectious (vector)")
-outChartStyle <- c("l", "l", "l", "o", "o")
-outChartColor <- c("blue", "red", "yellow", "blue", "red")
-outChartTitle <- ""
-outChartXLabel <- "Time"
-outChartYLabel <- ""
-
 outChartHuman <- TRUE
-outChartHumanSelect <- c("Sh", "Ih", "Rh", "Nh")
-outChartHumanLabel <- c("Susceptible", "Infectious", "Recovered", "Humam Population")
-outChartHumanStyle <- c("l", "l", "l", "o")
-outChartHumanColor <- c("blue", "red", "yellow", "black")
+outChartHumanSelect <- c("Sh", "Ih", "Rh")
+outChartHumanLabel <- c("Susceptible", "Infectious", "Recovered")
+outChartHumanStyle <- c("l", "l", "l")
+outChartHumanColor <- c("blue", "red", "green")
 outChartHumanTitle <- ""
 outChartHumanXLabel <- "Time"
 outChartHumanHYLabel <- ""
 
 outChartVector <- TRUE
-outChartVectorSelect <- c("Sv", "Iv", "Nv")
-outChartVectorLabel <- c("Susceptible", "Infectious", "Vector Population")
-outChartVectorStyle <- c("l", "l", "o")
-outChartVectorColor <- c("blue", "red", "black")
+outChartVectorSelect <- c("Sv", "Iv")
+outChartVectorLabel <- c("Susceptible", "Infectious")
+outChartVectorStyle <- c("l", "l")
+outChartVectorColor <- c("blue", "red")
 outChartVectorTitle <- ""
 outChartVectorXLabel <- "Time"
 outChartVectorYLabel <- ""
@@ -83,7 +74,7 @@ outLogFile <- paste0(RESULTS_PATH, "/results.csv")
 outLogSeparator <- ";"
 outLogOverwrite <- TRUE
 
-output <- outChart | outChartHuman | outChartVector | outTextScreen | outVisualTable | outLog
+output <- outChartHuman | outChartVector | outTextScreen | outVisualTable | outLog
 
 # LOADING MODEL
 source(paste0(SCRIPT_PATH, "\\r_sirsi_basic_model.r"))

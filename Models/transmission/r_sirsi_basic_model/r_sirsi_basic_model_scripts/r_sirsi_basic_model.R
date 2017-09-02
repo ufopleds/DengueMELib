@@ -41,23 +41,31 @@ tail(simulation)
 
 # Results
 if (output) {
-   if (outChart) {
-      plot(x = simulation$time, y = simulation$Sh, type = outChartStyle[1], col = outChartColor[1], xlab = "Time", ylab = "", ylim = c(0, max(simulation)))
-      lines(x = simulation$time, y = simulation$Ih, type = outChartStyle[2], col = outChartColor[2])
-      lines(x = simulation$time, y = simulation$Rh, type = outChartStyle[3], col = outChartColor[3])
-      lines(x = simulation$time, y = simulation$Sv, type = outChartStyle[4], col = outChartColor[4])
-      lines(x = simulation$time, y = simulation$Iv, type = outChartStyle[5], col = outChartColor[5])
+   if (outChartHuman & length(outChartHumanSelect) > 0) {
+      dev.new()
+      plot(x = simulation$time, y = simulation[,c(outChartHumanSelect[1])], type = outChartHumanStyle[1], col=outChartHumanColor[1], xlab="Time", ylab = "Humans")
+      if (length(outChartHumanSelect) >= 2)
+         for (i in 2:length(outChartHumanSelect))
+            lines(x = simulation$time, simulation[,c(outChartHumanSelect[i])], type = outChartHumanStyle[i], col=outChartHumanColor[i])
    }
-   if(outChartHuman) {
-      plot(x = simulation$time, y = simulation$Sh, type = outChartHumanStyle[1], col = outChartHumanColor[1], xlab = "Time", ylab = "Humans")
-      lines(x = simulation$time, y = simulation$Ih, type = outChartHumanStyle[2], col=outChartHumanColor[2])
-      lines(x = simulation$time, y = simulation$Rh, type = outChartHumanStyle[3], col=outChartHumanColor[3])
-      lines(x = simulation$time, y = simulation$Nh, type = outChartHumanStyle[4], col=outChartHumanColor[4], pch=20)
+   if(outChartVector & length(outChartVectorSelect) > 0) {
+      dev.new()
+      plot(x = simulation$time, y = simulation[,c(outChartVectorSelect[1])], type = outChartVectorStyle[1], col=outChartVectorColor[1], xlab="Time", ylab = "Vectors")
+      if (length(outChartVectorSelect) >= 2)
+         for (i in 2:length(outChartVectorSelect))
+            lines(x = simulation$time, simulation[,c(outChartVectorSelect[i])], type = outChartVectorStyle[i], col=outChartVectorColor[i])
    }
-   if(outChartVector) {
-      plot(x = simulation$time, y = simulation$Sv, type = outChartVectorStyle[1], col=outChartVectorColor[1], xlab="Time", ylab = "Vector")
-      lines(x = simulation$time, y = simulation$Iv, type = outChartVectorStyle[2], col=outChartVectorColor[2])
-      lines(x = simulation$time, y = simulation$Nv, type = outChartVectorStyle[3], col=outChartVectorColor[3], pch=20)
+   if (outChartHuman & length(outChartHumanSelect) > 0 & outChartVector & length(outChartVectorSelect) > 0) {
+      dev.new()
+      par(mfrow=c(2,1))
+      plot(x = simulation$time, y = simulation[,c(outChartHumanSelect[1])], type = outChartHumanStyle[1], col=outChartHumanColor[1], xlab="Time", ylab = "Humans")
+      if (length(outChartHumanSelect) >= 2)
+         for (i in 2:length(outChartHumanSelect))
+            lines(x = simulation$time, simulation[,c(outChartHumanSelect[i])], type = outChartHumanStyle[i], col=outChartHumanColor[i])
+      plot(x = simulation$time, y = simulation[,c(outChartVectorSelect[1])], type = outChartVectorStyle[1], col=outChartVectorColor[1], xlab="Time", ylab = "Vectors")
+      if (length(outChartVectorSelect) >= 2)
+         for (i in 2:length(outChartVectorSelect))
+            lines(x = simulation$time, simulation[,c(outChartVectorSelect[i])], type = outChartVectorStyle[i], col=outChartVectorColor[i])
    }
    if (outTextScreen) {
       lastRow <- simulation[nrow(simulation),]
