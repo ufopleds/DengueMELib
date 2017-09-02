@@ -15,6 +15,7 @@ MODEL_RVERSION <- "3.4.1"
 DEPENDENCIES <- data.frame(lib = c("deSolve"), version = c("1.20"), stringsAsFactors = F)
 
 # PATH CONFIG
+DMELIB_PATH <- "D:/github/workingpath/DengueMELib/Models/"
 BASE_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model"
 SCRIPT_PATH <- "D:/github/workingpath/DengueMELib/Models/transmission/r_sirsi_basic_model/r_sirsi_basic_model_scripts"
 RESULTS_PATH <- BASE_PATH
@@ -22,7 +23,7 @@ RESULTS_PATH <- BASE_PATH
 # checking dependencies
 USER_RVERSION <- package_version(R.version)
 USER_PACKINFO <- installed.packages(fields = c("Package", "Version"))
-source(paste0(BASE_PATH, "/../../dmelib.r"))
+source(paste0(DMELIB_PATH, "dmelib.r"))
 dmelib_check_dependencies(modelRVersion = MODEL_RVERSION, modelDependences = DEPENDENCIES, userRVersion = USER_RVERSION, userLibs = USER_PACKINFO)
 
 # PARAMETERS
