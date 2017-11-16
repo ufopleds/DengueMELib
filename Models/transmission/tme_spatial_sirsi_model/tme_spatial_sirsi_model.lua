@@ -3,6 +3,7 @@
 SpatialSir = Model{
 
 	finalTime = finalTime,
+
 	dim = dim,
 	homogenousH = homogenousH,
 	humanMimRange = humanMimRange,
@@ -27,7 +28,7 @@ SpatialSir = Model{
 
 			execute = function(self)
 
-				-- Verify neighboors
+				-- Verificacao dos vizinhos
 				local countNeigh = 0
 				forEachNeighbor(self, function(neigh)
 					
@@ -37,7 +38,7 @@ SpatialSir = Model{
 
 				end)
 
-		   		-- Neigh dynamic version 0.1
+		   		-- Dinamica dos vizinhos a ser feita
 			   	if countNeigh > 2 then	
 			   	 	self.betah = self.betah + 0.100
 				end
@@ -92,12 +93,13 @@ SpatialSir = Model{
 		-- homgeneous or Heterogeneous populations
 		if homogenousH == false then
 			forEachCell(model.cs, function(cell)
-				cell.Sh = math.random(humanMimRange,humanMaxRange)
+				cell.Sh = math.random(20,9999)
+				cell.Ih = Ih
+				cell.Rh = Rh
 			end)
 		else
 			forEachCell(model.cs, function(cell)
-				cell.Sh = Sh
-				print(Ih)
+				cell.Sh = Sh				
 	  			cell.Ih = Ih 
 	  			cell.Rh = Rh 	
 
@@ -106,7 +108,8 @@ SpatialSir = Model{
 
 		if homogenousV == false then
 			forEachCell(model.cs, function(cell)
-				cell.Sv = math.random(vectorMimRange,vectorMaxRange)
+				cell.Sv = math.random(20,100000)
+				cell.Iv = 0
 			end)
 		else
 			forEachCell(model.cs, function(cell)
@@ -118,18 +121,18 @@ SpatialSir = Model{
 		-------------------------------
 
 
-		-- Pop variables
+		-- Total population
 		local totalHPop = 0
-		local totalVpop = 0
+		local totalVPop = 0
 		forEachCell(model.cs, function(cell)
-			totalPopulation = totalPopulation + cell.Sh + cell.Ih + cell.Rh
-			totalVpop = totalVpop + cell.Sv + cell.Iv
+			totalHPop = totalHPop + cell.Sh + cell.Ih + cell.Rh
+	  		totalVPop = totalVPop + cell.Sv + cell.Iv
 		end)
-		---------------
+		------------------
 
 
 		
-		-- Nighbor scheeme
+		-- Nighbor schemee
 		model.cs:createNeighborhood{strategy = "vonneumann"}
 		-----------------
 

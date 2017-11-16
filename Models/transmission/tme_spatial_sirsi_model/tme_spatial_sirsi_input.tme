@@ -6,8 +6,8 @@ return {
 		height = 500, 
 	}, 
 	[2] = {
-		x = 150, 
-		y = 150, 
+		x = 778, 
+		y = 131, 
 		width = 600, 
 		height = 500, 
 	}, 

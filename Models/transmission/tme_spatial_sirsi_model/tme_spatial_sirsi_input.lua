@@ -19,12 +19,12 @@ SCRIPT_PATH = "C:/Users/Lucas/Documents/GitHub/Models/DengueMELib/Models/transmi
 RESULTS_PATH = BASE_PATH
 
 -- PARAMETERS
-finalTime = 60 
-dim = 50 
+finalTime = 45 
+dim = 100 
 
-homogenousH = true 
-humanMimRange = 0 
-humanMaxRange = 1000 
+homogenousH = false 
+humanMimRange = 10
+humanMaxRange = 9999
 
 homogenousV = false 
 vectorMimRange = 0
