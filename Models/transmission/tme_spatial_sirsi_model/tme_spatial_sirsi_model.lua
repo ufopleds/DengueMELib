@@ -10,13 +10,8 @@ SpatialSir = Model{
 	homogenousV = homogenousV,
 	vectorMimRange = vectorMimRange,
 	vectorMaxRange = vectorMaxRange,
-	totalSh = 0,
-	totalIh = 0,
-	totalRh = 0,
-	totalSv = 0, 
-	totalIv = 0,
-    totalHPop = 0,
-	totalVPop = 0,
+	totalHPop = 0,
+	totalVPop =0,
 
 
 	init = function(model)
@@ -31,8 +26,10 @@ SpatialSir = Model{
 			biting = biting,
 			gamma = gamma,
 			betah = betah,
-			betav = betav,
-
+			betav = betav,			
+			Nh = Sh+Ih+Rh,
+			risen = false,
+			proportion = 0,
 			execute = function(self)	
 
 				-- Verificacao dos vizinhos
@@ -45,13 +42,15 @@ SpatialSir = Model{
 				end)
 
 		   		-- Dinamica dos vizinhos a ser feita
-			   	if countNeigh > 2 then	
-			   	 	self.betah = self.betah + 0.100
-				end
+			   	if countNeigh > 2 and risen == false then
+			   	 	self.betav = self.betav + 0.100
+			   	 	self.betah = self.betah + 0.100			   	 	
+			   	 	self.risen = true
+			   	end
 
 
-	 			Nh = self.past.Sh + self.past.Ih + self.past.Rh
-	 			Nv = self.past.Sv + self.past.Iv
+	 			Nh = self.Sh + self.Ih + self.Rh	 	
+	 			Nv = self.Sv + self.Iv
 
 
 			    local new_human_infections = (self.betah * self.biting/Nh) * self.past.Sh * self.past.Iv
@@ -83,6 +82,9 @@ SpatialSir = Model{
 				elseif (self.past.Rh/Nh) * 100 > 90 then
 					self.state = "recovered"	
 				end
+
+				self.proportion = self.Ih/Nh
+
 			end
 		}
 		----------------------
@@ -135,9 +137,8 @@ SpatialSir = Model{
 		------------------
 
 
-
 		-- Nighbor schemee
-		model.cs:createNeighborhood{strategy = "vonneumann"}
+		model.cs:createNeighborhood{strategy = "moore"}
 		-----------------
 
 		-- Observers
@@ -152,11 +153,22 @@ SpatialSir = Model{
 			target = model.cs,
 	        select = "state",
 	      	value = {"susceptible", "infected", "recovered"},
-	        color = {"yellow", "red", "green"}
+	        color = {"lightBlue", "red", "green"}
+		}
+
+		model.map2 = Map{
+			target = model.cs,
+			select = "proportion",
+			slices = 11,
+			min = 0,
+			max = 1,
+			color =  "Reds",
+			invert = false ,
+			title = "Proportion of Infected"
 		}
 
 		model.chart2 = Chart {
-           target = model,
+           target = model.cs,
            select = outChartSelect, 
            label= outChartLabel, 
            style = outChartStyle, 
@@ -165,31 +177,12 @@ SpatialSir = Model{
          }
 		-------------	
 
- 	
-     
-      calcPop = Event {action = function(event)
-      	model.totalSh = 0
-      	model.totalIh = 0
-      	model.totalRh = 0
-      	model.totalSh = 0
-      	model.totalSv = 0
-      	model.totalIv = 0
-   		forEachCell(model.cs, function(cell)
-					model.totalSh = model.totalSh + cell.Sh 
-			  		model.totalIh = model.totalIh + cell.Ih
-			  		model.totalRh = model.totalRh + cell.Rh
-			  		model.totalSv = model.totalSv + cell.Sv
-			  		model.totalIv = model.totalIv + cell.Iv
-				end)
-		end}
-
 		-- Timer
 		model.timer = Timer{
-	       Event{action = model.cs},
+	       Event{priority = -10, action = model.cs},
 	       Event{action = model.chart},
 	       Event{action = model.chart2},
-	       Event{action = model.map},
-	     	calcPop
+	       Event{action = model.map2}	     	
 	      
 	    }
     -------

@@ -19,19 +19,19 @@ SCRIPT_PATH = "C:/Users/Lucas/Documents/GitHub/Models/DengueMELib/Models/transmi
 RESULTS_PATH = BASE_PATH
 
 -- PARAMETERS
-finalTime = 80 
-dim = 50 
+finalTime = 50	 
+dim = 50
 
 homogenousH = false 
 humanMimRange = 10
-humanMaxRange = 20
+humanMaxRange = 9999
 
-homogenousV = false 
+homogenousV = true 
 vectorMimRange = 0
 vectorMaxRange = 20000
 
 Sh= 9999
-Ih = 1
+Ih = 1	
 Rh = 0 			
 Sv = 20000
 Iv = 0 			
@@ -40,10 +40,9 @@ gamma = 0.167
 betah = 0.400
 betav = 0.400
 
-
-outChartSelect = {"totalSh", "totalIh", "totalRh", "totalHPop"}
-outChartLabel = {"Susceptible", "Infected", "Recovered", "Humam Population"}
-outChartStyle = {"lines", "lines", "lines", "dots"}
-outChartColor = {"blue", "red", "yellow", "black"}
+outChartSelect = {"Sh", "Ih", "Rh"}
+outChartLabel = {"Susceptible", "Infected", "Recovered"}
+outChartStyle = {"lines", "lines", "lines"}
+outChartColor = {"blue", "red", "yellow"}
 
 dofile(SCRIPT_PATH .. "/tme_spatial_sirsi_model.lua")
