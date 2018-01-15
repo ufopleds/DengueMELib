@@ -35,7 +35,7 @@
       <field id="Nv" label="Population" type="spinbox" minimum="0" maximum="1e+06" description="total vector population [1-999999999]">20000</field>
     </groupbox>
     <groupbox label="Rates">
-      <field id="biting" label="Biting rate (per mosquito per day)" type="doublespinbox" minimum="0" maximum="1e+03" precision="2" step="1" description="average number of bites per mosquito per day [0-999]">1</field>
+      <field id="bitting" label="Biting rate (per mosquito per day)" type="doublespinbox" minimum="0" maximum="1e+03" precision="2" step="1" description="average number of bites per mosquito per day [0-999]">1</field>
       <field id="gamma" label="Recovery rate of humans" type="doublespinbox" minimum="0" maximum="1" precision="3" step="0.1" description="human recovery rate [0-1]">0.167</field>
       <field id="betah" label="Transmission probability (vector to human)" type="doublespinbox" minimum="0" maximum="1" precision="3" step="0.1" description="transmission probability from vector to human [0-1]">0.4</field>
       <field id="betav" label="Transmission probability (human to vector)" type="doublespinbox" minimum="0" maximum="1" precision="3" step="0.1" description="transmission probability from human to vector [0-1]">0.4</field>
